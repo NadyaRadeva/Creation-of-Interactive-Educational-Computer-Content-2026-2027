@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="suica.js"></script>
+	</head>
+	
+	<body>
+		<suica fullWindow>
+			<oxyz>
+			<orbit>
+		</suica>
+		
+		<script>
+			n = 100;
+			
+			a = point([-40, random(-20, 20), random(-20, 20)]);
+			b = point([40, random(-20, 20), random(-20, 20)]);
+			
+			for(var i = 0; i < n; ++i) {
+				k = random(0, 1);
+				
+				x = a.x*(1-k) + k*b.x;
+				y = a.y*(1-k) + k*b.y;
+				z = a.z*(1-k) + k*b.z;
+				
+				point([x, y, z], random(0.5, 3), "crimson");
+			}
+		</script>
+	</body>
+</html>
