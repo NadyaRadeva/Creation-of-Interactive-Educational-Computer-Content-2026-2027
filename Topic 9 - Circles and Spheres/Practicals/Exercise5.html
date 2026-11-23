@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="suica.js"></script>
+	</head>
+
+	<body>
+		<suica fullWindow>
+			<orbit altitude="0">
+		</suica>
+		
+		<script>
+			n=12;
+			d=10;
+			s=d*Math.sin(radians(180/3));
+			h=s*Math.sqrt(3)/2;
+			
+			cx=(n-1)/2*s;
+			cz=cx*2/3;
+			
+			colors = [ 'linen', 'dimgray', 'darkseagreen', 'darksalmon' ];
+			
+			for( var x=1; x<=n; x++ )	{
+				colorIdx = x%4;
+				
+				for( var z=1; z<=x; z++ )	{
+					colorIdx++;
+
+					prism( 3, [s*(x-z/2)-cx,-1,h*z-cz], [d,2], colors[colorIdx%4] );
+					its.spinH = 30;
+					
+					if( z<x )
+					{
+						colorIdx++;
+						prism( 3, [its.x-s/2,-1,its.z+h/3], its.size, colors[colorIdx%4] );
+						its.spinH = 30+180;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
