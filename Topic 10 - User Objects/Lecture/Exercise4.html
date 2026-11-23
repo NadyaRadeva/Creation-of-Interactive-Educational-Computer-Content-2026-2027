@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<script src="suica.js"></script>
+  </head>
+  
+  <body>
+  	<suica fullWindow>
+  		<orbit>
+  		<sphere id="zone" size="100,50" hidden>
+  	</suica>
+  	
+  	<script>
+  		n = 300;
+  
+  		framed = {wireframe: true, color: 'black'};
+  		
+  		for( var i=0; i<n; i++ )	{
+  			pos = randomIn( zone );
+  			
+  			pyramid( 4, pos, [5,10] ).style({	color: hsl( random(0,360), 100, 60 ),	spinH: random( 0, 360 ), spinV: random( 0, 360 ),});
+        
+  			its.clone.style( framed );
+  		}
+  	</script>	
+  </body>
+</html>
