@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="suica.js"></script>
+	</head>
+
+	<body>
+		<suica fullWindow>
+			<orbit altitude="0">
+		</suica>
+		
+		<script>
+			n=600;
+			r=60;
+			
+			sphere([0, 0, 0], r, "white");
+			
+			inner=sphere();
+			
+			for(var i = 0; i < n; ++i) {
+				size=random(2, 10);
+				
+				inner.size=r - size + 0.1;
+				
+				pos=randomOn(inner);
+				sphere(pos, size, "black");
+			}
+		</script>
+	</body>
+</html>
