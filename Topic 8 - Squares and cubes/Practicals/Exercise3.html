@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="suica.js"></script>
+	</head>
+	
+	<body>
+		<suica fullWindow>
+			<orbit>
+		</suica>
+		
+		<script>
+			colors = ['linen','peachpuff','lightsalmon','lightgray','gray','dimgray'];
+			
+			for( var y=-45; y<=45; y+=15 )	{
+				for( var x=-120; x<120; )	{
+					size = random( 1, 15 );
+					
+					x += size/2; 
+					
+					square( [x,y,0], size, random(colors) );
+					square( [x,y,0], size, 'black' );
+					its.wireframe = true;
+					
+					x += size/2;
+				}
+			}
+		</script>
+	</body>
+</html>
