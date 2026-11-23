@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="suica.js"></script>
+    </head>
+
+    <body>
+        <suica fullWindow>
+            <orbit altitude="0" distance="20">
+        </suica>
+
+        <script>
+            n = 12;
+
+            c = n/2 - 1/2;
+
+            colors = ["black", "white"];
+
+            for(var i = 0; i < n; ++i) {
+                for(var j = 0; j < n; ++j) {
+                    square([i-c, j-c, 0], 1, colors[(i+j)%2]);
+                }
+            }
+        </script>
+    </body>
+</html>
