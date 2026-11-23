@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<script src="suica.js"></script>
+</head>
+
+<body>
+	<suica fullWindow>
+		<orbit>
+	</suica>
+	
+	<script>
+		n = 1000;
+		r = 20;
+		
+		for(var i = 0; i < n; ++i) {
+			alpha = radians(random(0, 360));
+			beta = radians(random(0, 360));
+			
+			x = r * Math.cos(alpha) * Math.cos(beta);
+			y = r * Math.sin(alpha) * Math.cos(beta);
+			z = r * Math.sin(beta);
+				
+			color = [ random(0,1), random(0,1), random(0,1) ];
+				
+			point( [x,y,z], 3, color );
+		}
+	</script>
+</body>
